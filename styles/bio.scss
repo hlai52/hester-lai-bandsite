@@ -1,0 +1,38 @@
+// Questions
+// linking-unlinking- @ import, @use, @ mixin when?
+// Why won't my header style work or font face?
+//SASS says undefined variable?
+
+@use "./partials/fonts";
+@use "./partials/components/header";
+@use "./partials/components/mainContent";
+@use "./partials/components/footer";
+@use "./partials/colors" as *;
+// when Importing files and needing to use the color
+
+html,
+body {
+  margin: 0;
+  font-family: "Avenir";
+
+  height: 100vh;
+  box-sizing: border-box;
+  //   color: $colorinickname
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+//medium tablet//
+@media screen {
+}
+
+.navigation__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $bandsite-black;
+}
