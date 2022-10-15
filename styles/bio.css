@@ -39,24 +39,15 @@ body {
 .navigation__container {
   width: 100%;
 }
-.navigation__container__menu-item {
+
+.navigation__menu-item {
   list-style: none;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 0.5rem;
   width: 100%;
   color: #ffffff;
-}
-.navigation__container .menu-item {
-  width: 50vw;
-  text-align: center;
-  border-bottom: 0.2125rem solid transparent;
-}
-.navigation__container .menu-item-link {
-  text-decoration: none;
-  display: block;
-  padding-bottom: 0.44rem;
 }
 
 .hero {

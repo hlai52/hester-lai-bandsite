@@ -1,7 +1,5 @@
 // Questions
-// linking-unlinking- @ import, @use, @ mixin when?
-// Why won't my header style work or font face?
-//SASS says undefined variable?
+// band photos wont center?
 
 @use "./partials/fonts";
 
@@ -43,35 +41,25 @@ body {
 
   &__container {
     width: 100%;
-
-    &__menu-item {
-      list-style: none;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      margin-top: 0.5rem;
-      width: 100%;
-      color: $white;
-    }
-    .menu-item {
-      width: 50vw;
-      text-align: center;
-      border-bottom: 0.2125rem solid transparent;
-      &-link {
-        text-decoration: none;
-        display: block;
-        padding-bottom: 0.44rem;
-      }
-    }
-
-    // @include medium{
-
-    // }
-    // @include large{
-
-    // }
   }
 }
+
+.navigation__menu-item {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  width: 100%;
+  color: $white;
+}
+
+// @include medium{
+
+// }
+// @include large{
+
+// }
 
 .hero {
   display: flex;
