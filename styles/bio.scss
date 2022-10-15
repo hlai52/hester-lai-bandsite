@@ -25,7 +25,6 @@ body {
 
   height: 100vh;
   box-sizing: border-box;
-  //   color: $colorinickname
 }
 
 *,
@@ -36,16 +35,101 @@ body {
 
 //medium tablet//
 
-.navigation__container {
+.navigation {
   display: flex;
   flex-direction: column;
   align-items: center;
   background: $bandsite-black;
+
+  &__container {
+    width: 100%;
+
+    &__menu-item {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 0.5rem;
+      width: 100%;
+      color: $white;
+    }
+    .menu-item {
+      width: 50vw;
+      text-align: center;
+      border-bottom: 0.2125rem solid transparent;
+      &-link {
+        text-decoration: none;
+        display: block;
+        padding-bottom: 0.44rem;
+      }
+    }
+
+    // @include medium{
+
+    // }
+    // @include large{
+
+    // }
+  }
 }
 
-// @include medium{
+.hero {
+  display: flex;
+  background-image: url(/assets/images/hero-bio.jpg);
+  height: 56vw;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
 
-// }
-// @include large{
+.container__bandphoto {
+  width: 40vh;
+  height: 20%; //why? vh vs percentage?
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto; //why? vs padding?
+}
 
-// }
+.gallery__photos {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.about__container {
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 1rem;
+
+  //why not margin?//
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: $bandsite-black;
+  padding: 0 1rem;
+
+  &__container {
+    display: flex; //these properties don't follow from parent footer?
+    flex-direction: column;
+    position: relative;
+  }
+  &__social {
+    display: flex;
+    justify-content: flex-start;
+    justify-content: space-evenly;
+  }
+}
