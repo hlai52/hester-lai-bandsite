@@ -4,9 +4,7 @@
 //SASS says undefined variable?
 
 @use "./partials/fonts";
-@use "./partials/components/header";
-@use "./partials/components/mainContent";
-@use "./partials/components/footer";
+
 @use "./partials/colors" as *;
 // when Importing files and needing to use the color
 // @include breakpoints.small{
