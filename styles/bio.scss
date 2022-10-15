@@ -9,6 +9,16 @@
 @use "./partials/components/footer";
 @use "./partials/colors" as *;
 // when Importing files and needing to use the color
+// @include breakpoints.small{
+
+// }
+
+// .header{
+//   @include breakpoints.small{
+
+//   }
+// }
+// when Importing files and needing to use the color @use @mixin *breakpoint and wrappers
 
 html,
 body {
@@ -27,8 +37,6 @@ body {
 }
 
 //medium tablet//
-@media screen {
-}
 
 .navigation__container {
   display: flex;
@@ -36,3 +44,10 @@ body {
   align-items: center;
   background: $bandsite-black;
 }
+
+// @include medium{
+
+// }
+// @include large{
+
+// }
