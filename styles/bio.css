@@ -52,19 +52,19 @@ ul {
 }
 
 @font-face {
-  font-family: "Avenir";
+  font-family: "Avenir-regular";
   src: url("../../assets/font/avenirnextltpro-regular.otf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "Avenir";
+  font-family: "Avenir-demi";
   src: url("../../assets/font/avenirnextltpro-demi.otf") format("truetype");
   font-weight: 600;
   font-style: medium;
 }
 @font-face {
-  font-family: "Avenir";
+  font-family: "Avenir-bold";
   src: url("../../assets/font/avenirnextlt-pro-bold.otf") format("truetype");
   font-weight: 700;
   font-style: bold;
@@ -84,6 +84,7 @@ ul {
   font-weight: 600;
   font-size: 1rem;
   line-height: 2rem;
+  font-family: "Avenir-regular";
 }
 @media only screen and (min-width: 768px) {
   .hero__title {
@@ -96,6 +97,11 @@ ul {
 }
 .about__bandphoto {
   width: 100%;
+}
+.about__title {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
 }
 
 .gallery__photo {

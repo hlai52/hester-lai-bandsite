@@ -8,15 +8,10 @@
 @use "./partials/largetypography" as typography;
 @use "./partials/breakpoint" as breakpoint;
 // tips when Importing files and needing to use the color
-// @include breakpoints.small{
 
-// }
-
-// .header{
-//   @include breakpoints.small{
-
-//   }
-// }
+// $font-regular: "Avenir-regular";
+// $font-demi: "Avenir-demi";
+// $font-bold: "Avenir-bold";
 // when Importing files and needing to use the color @use @mixin *breakpoint and wrappers
 
 //
@@ -47,6 +42,7 @@
     font-weight: 600;
     font-size: 1rem;
     line-height: 2rem;
+    font-family: $font-regular;
 
     @include breakpoint.medium {
       font-size: 2em;
@@ -63,6 +59,9 @@
   &__bandphoto {
     width: 100%;
     // display: block;makes it act like a block
+  }
+  &__title {
+    @include smalltypography.smallbody;
   }
 }
 .gallery__photo {
