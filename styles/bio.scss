@@ -2,7 +2,7 @@
 @use "./partials/global";
 @use "./partials/fonts" as *;
 @use "./partials/colors" as *;
-//because you use all the colors and the * is not used for hte bottom cause you want to refer to certain parts of the file
+//because +you use all the colors and the * is not used for hte bottom cause you want to refer to certain parts of the file
 @use "./partials/smalltypography" as typography;
 @use "./partials/breakpoint" as breakpoint;
 // tips when Importing files and needing to use the color
@@ -27,6 +27,7 @@
     ),
     url("../../../assets/images/hero-bio.jpg");
   background-size: cover;
+  background-position: center;
   height: 30vw;
   display: flex;
   flex-direction: column;
@@ -55,16 +56,19 @@
 }
 
 .about {
-  padding: 0 1rem;
+  padding: 0 1 rem;
 
   &__bandphoto {
     width: 100%;
     // display: block;makes it act like a block
   }
 }
-.gallery__photos {
+.gallery__photo {
   width: 100%;
   margin: 0 auto;
+  &:hover {
+    filter: grayscale(1);
+  }
 }
 
 .about__container {
@@ -90,13 +94,12 @@
   padding: 0 1rem;
 
   &__container {
-    display: flex; //these properties don't follow from parent footer?
+    display: flex;
     flex-direction: column;
     position: relative;
   }
   &__social {
     display: flex;
-    justify-content: flex-start;
-    justify-content: space-evenly;
+    gap: 85%;
   }
 }

@@ -4,7 +4,7 @@ html,
 body {
   margin: 0;
   font-family: "Avenir";
-  height: 100vh;
+
   box-sizing: border-box;
 }
 
@@ -31,13 +31,15 @@ ul {
 
   &__container {
     width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   &__menu-item {
     list-style: none;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 0.5rem;
     width: 100%;
     color: $white;
