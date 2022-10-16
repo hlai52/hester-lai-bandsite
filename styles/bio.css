@@ -1,3 +1,45 @@
+html,
+body {
+  margin: 0;
+  font-family: "Avenir";
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+ul {
+  list-style: none;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #323232;
+}
+.navigation__container {
+  width: 100%;
+}
+.navigation__menu-item {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  width: 100%;
+  color: #ffffff;
+}
+
 @font-face {
   font-family: "Avenir";
   src: url("../../assets/font/avenirnextltpro-regular.otf") format("truetype");
@@ -16,65 +58,36 @@
   font-weight: 700;
   font-style: bold;
 }
-html,
-body {
-  margin: 0;
-  font-family: "Avenir";
-  height: 100vh;
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-.navigation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #323232;
-}
-.navigation__container {
-  width: 100%;
-}
-
-.navigation__menu-item {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 0.5rem;
-  width: 100%;
-  color: #ffffff;
-}
-
 .hero {
   background: linear-gradient(to bottom, rgba(50, 50, 50, 0.534), rgba(50, 50, 50, 0.5)), url("../../../assets/images/hero-bio.jpg");
   background-size: cover;
-  height: auto;
-  height: 30vh;
-  border: none;
+  height: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 1rem;
 }
 .hero__title {
-  flex: display;
   color: #ffffff;
-  padding-top: 4rem;
   font-weight: 600;
+  font-size: 1rem;
+  line-height: 2rem;
 }
-.container__bandphoto {
-  width: 40vh;
-  height: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 2rem;
+@media only screen and (min-width: 768px) {
+  .hero__title {
+    font-size: 2em;
+    max-height: 2rem;
+  }
+}
+.about {
+  padding: 0 1rem;
+}
+.about__bandphoto {
+  width: 100%;
 }
 
 .gallery__photos {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 

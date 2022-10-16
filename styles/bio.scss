@@ -1,9 +1,8 @@
 // Questions
-
-//how to use @use, @Mixin, @import, how to resize one layout band photos wont center?
-
+@use "./partials/global";
 @use "./partials/fonts" as *;
 @use "./partials/colors" as *;
+//because you use all the colors and the * is not used for hte bottom cause you want to refer to certain parts of the file
 @use "./partials/smalltypography" as typography;
 @use "./partials/breakpoint" as breakpoint;
 // tips when Importing files and needing to use the color
@@ -18,49 +17,7 @@
 // }
 // when Importing files and needing to use the color @use @mixin *breakpoint and wrappers
 
-html,
-body {
-  margin: 0;
-  font-family: "Avenir";
-  height: 100vh;
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-//medium tablet//
-
-.navigation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: $bandsite-black;
-
-  &__container {
-    width: 100%;
-  }
-}
-
-.navigation__menu-item {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 0.5rem;
-  width: 100%;
-  color: $white;
-}
-
-// @include medium{
-
-// }
-// @include large{
-
-// }
+//
 
 .hero {
   background: linear-gradient(
@@ -70,35 +27,43 @@ body {
     ),
     url("../../../assets/images/hero-bio.jpg");
   background-size: cover;
-  height: auto;
-  height: 30vh;
-  border: none;
+  height: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 1rem;
+  //*esp for hero preferably viewport width so it scales with the viewport device cause we only want it increasing decreasing based on width//
 
-  &__title {
-    flex: display;
-    color: $white;
-    padding-top: 4rem;
-    font-weight: 600;
-  }
   @include breakpoint.medium {
   }
-
   @include breakpoint.large {
+  }
+
+  &__title {
+    color: $white;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 2rem;
+
+    @include breakpoint.medium {
+      font-size: 2em;
+      max-height: 2rem;
+    }
+    @include breakpoint.large {
+    }
   }
 }
 
-.container__bandphoto {
-  width: 40vh;
-  height: 20%; //why? vh vs percentage?
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 2rem;
-}
+.about {
+  padding: 0 1rem;
 
+  &__bandphoto {
+    width: 100%;
+    // display: block;makes it act like a block
+  }
+}
 .gallery__photos {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 

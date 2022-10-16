@@ -1,0 +1,45 @@
+@use "./colors" as *;
+
+html,
+body {
+  margin: 0;
+  font-family: "Avenir";
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+}
+
+ul {
+  list-style: none;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $bandsite-black;
+
+  &__container {
+    width: 100%;
+  }
+
+  &__menu-item {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    width: 100%;
+    color: $white;
+  }
+}
