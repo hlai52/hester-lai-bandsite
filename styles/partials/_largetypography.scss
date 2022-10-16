@@ -1,10 +1,31 @@
-// Page Header Text size: 60px | Line height: 68px | Text weight: Bold 700
-// Section Header Text size: 36px | Line height: 44px | Text weight: 700
-// Subheader
-// Text size: 24px | Line height: 32px | Text weight: Demi 600
-// Body Copy
-// Text size: 14px | Line height: 22px | Text weight: Regular 400
-// Footer Copy
-// Text size: 14px | Line height: 20px | Text weight: Regular 400
-// LABELS & BUTTONS
-// Text size: 12px | Line height: 20px | Text weight: Bold 700
+@mixin page-header {
+  font-size: 60px;
+  line-height: 44px;
+  font-weight: 700;
+}
+
+@mixin section-header {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+}
+@mixin sub-header {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+}
+@mixin body-copy {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+@mixin footer-copy {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+@mixin labels-buttons {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+}

@@ -1,6 +1,35 @@
-@mixin page-header {
+@mixin smallpage-header {
   font-size: 60px;
   line-height: 44px;
+  font-weight: 700;
+}
+
+@mixin smallsection-header {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+@mixin smallsub-header {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+}
+
+@mixin smallbody-copy {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+@mixin smallfooter-copy {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+@mixin smalllabels-buttons {
+  font-size: 10px;
+  line-height: 20px;
   font-weight: 700;
 }
 

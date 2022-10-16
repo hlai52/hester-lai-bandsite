@@ -26,12 +26,22 @@ ul {
   align-items: center;
   background: #323232;
 }
+.navigation__logo {
+  padding-top: 1rem;
+}
 .navigation__container {
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 .navigation__menu-item {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 0.5rem;
+  width: 100%;
+  color: #ffffff;
+}
+.navigation__menu-item--link {
   list-style: none;
   display: flex;
   flex-direction: row;

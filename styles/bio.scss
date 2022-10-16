@@ -2,8 +2,10 @@
 @use "./partials/global";
 @use "./partials/fonts" as *;
 @use "./partials/colors" as *;
+
 //because +you use all the colors and the * is not used for hte bottom cause you want to refer to certain parts of the file
-@use "./partials/smalltypography" as typography;
+@use "./partials/smalltypography" as smalltypography;
+@use "./partials/largetypography" as typography;
 @use "./partials/breakpoint" as breakpoint;
 // tips when Importing files and needing to use the color
 // @include breakpoints.small{
