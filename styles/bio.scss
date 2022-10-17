@@ -36,11 +36,6 @@
 
   //*esp for hero preferably viewport width so it scales with the viewport device cause we only want it increasing decreasing based on width//
 
-  @include breakpoint.medium {
-  }
-  @include breakpoint.large {
-  }
-
   &__title {
     color: $white;
     line-height: 2rem;
@@ -48,8 +43,9 @@
     padding-right: 7rem;
 
     @include breakpoint.medium {
-      font-size: 2em;
+      font-size: 3em;
       max-height: 2rem;
+      padding-right: 50%;
     }
     @include breakpoint.large {
     }
@@ -62,9 +58,20 @@
   background-color: $white;
   padding: 0 1rem;
 
+  @include breakpoint.medium {
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    padding: 0 4rem;
+  }
+
   &__quote {
     font-family: $font-demi;
     @include smalltypography.smallsub-header;
+
+    @include breakpoint.medium {
+      @include typography.sub-header;
+    }
   }
 
   &__paratitle {
@@ -78,6 +85,10 @@
   &__title {
     font-family: $font-demi;
     @include smalltypography.smallsection-header;
+
+    @include breakpoint.medium {
+      @include typography.section-header;
+    }
   }
 }
 // Style restricted on para title/title - won't budge
@@ -88,6 +99,9 @@
   &:hover {
     filter: grayscale(1);
   }
+  @include breakpoint.medium {
+    max-width: 31%;
+  }
 }
 
 .gallery {
@@ -97,8 +111,16 @@
   padding: 0 1rem;
   background-color: $alabaster;
 
-  //why not margin?//
+  @include breakpoint.medium {
+    flex-flow: row wrap;
+    gap: 1.5rem;
+    justify-content: space-between;
+    align-items: center margin-bottom 1rem;
+    // padding: 0 3rem;
+  }
 }
+
+//why not margin?//
 
 .footer {
   display: flex;
@@ -106,6 +128,10 @@
   align-items: flex-start;
   background-color: $bandsite-black;
   padding: 0 1rem;
+
+  &__logo {
+    display: inline;
+  }
 
   &__title {
     color: $white;
@@ -115,6 +141,7 @@
     flex-direction: column;
     position: relative;
   }
+
   &__social {
     display: flex;
     gap: 55%;
@@ -129,6 +156,11 @@
     padding: 0 0rem;
     color: $white;
     @include smalltypography.smallfooter-copy;
+    @include breakpoint.medium {
+      flex-direction: row;
+      gap: 2.25rem;
+      width: 100%;
+    }
   }
 
   &__copyright {
