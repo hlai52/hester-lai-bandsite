@@ -1,21 +1,26 @@
 // Regular
 @font-face {
-  font-family: "Avenir";
+  font-family: "Avenir-regular";
   src: url("../../assets/font/avenirnextltpro-regular.otf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
+
+// keep one or two font weight or font style
 // Bigger
 @font-face {
-  font-family: "Avenir";
+  font-family: "Avenir-demi";
   src: url("../../assets/font/avenirnextltpro-demi.otf") format("truetype");
   font-weight: 600;
   font-style: medium;
 }
 // Bold
 @font-face {
-  font-family: "Avenir";
+  font-family: "Avenir-bold";
   src: url("../../assets/font/avenirnextlt-pro-bold.otf") format("truetype");
   font-weight: 700;
   font-style: bold;
 }
+$font-regular: "Avenir-regular";
+$font-demi: "Avenir-demi";
+$font-bold: "Avenir-bold";

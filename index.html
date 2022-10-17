@@ -11,7 +11,7 @@
   <!-- Navigation Bar Starts -->
   <body>
     <nav class="navigation">
-      <a href="./index.html>" class="navigation__logo">
+      <a href="index.html" class="navigation__logo">
         <img src="./assets/logos/Logo-bandsite.svg" alt="bandsite logo"
       /></a>
 
@@ -20,7 +20,10 @@
         <!-- CHECK UL & LI -->
         <ul class="navigation__menu-item">
           <li class="navigation__menu-item">
-            <a class="navigation__menu-item-link" href="./index.html"
+            <a
+              class="navigation__menu-item--link"
+              class="active"
+              href="./index.html"
               >Biography</a
             >
           </li>
@@ -40,43 +43,44 @@
 
     <!-- End of hero banner -->
     <!-- Start of main content -->
-    <section class="about__container">
-      <h2 class="about__title">About The Musicians</h2>
-    </section>
-    <main class="container">
-      <img
-        src="./assets/images/band.jpg"
-        alt="photo of a band"
-        class="container__bandphoto"
-      />
+    <main>
+      <section class="about">
+        <h2 class="about__title">About The Musicians</h2>
+        <img
+          src="./assets/images/band.jpg"
+          alt="photo of a band"
+          class="about__bandphoto"
+        />
 
-      <h4 class="about__quote">
-        “We push each other to be the best. It’s not uncommon for one of us to
-        say ‘this needs to be better, back to the drawing board’”
-      </h4>
+        <h4 class="about__quote">
+          “We push each other to be the best. It’s not uncommon for one of us to
+          say ‘this needs to be better, back to the drawing board’”
+        </h4>
+        -Bryan Teddy, lead vocalist of The Bees Knees
 
-      <h3 class="about__title">The Bees Knees</h3>
-      <p>
-        - Bryan Teddy, lead vocalist of The Bees Knees The Bees Knees The Bees
-        Knees is a pop rock band originating from San Francisco, California. The
-        band consists of lead vocalist Bryan Teddy, guitarist Mack Tolkens,
-        guitarist Andrew Green, bassist Kent Zulkee and drummer Freddie Fischer.
-        The band achieved its first commercial success as an unsigned act,
-        drawing attention from manager Cam Adams. Having worked with other
-        popular acts (The Elephant In The Room, One Trick Pony, The Cat’s Meow),
-        Adams was confident the band could succeed even further, pushing them to
-        sign with Magenta Records.
-      </p>
-      <p>
-        From there, the band has soared, gaining international recognition and
-        ranking in the top 10 on the Poster Charts. New fans immediately fell in
-        love with the band’s original and organic attitude, solidifying their
-        place as one of the hottest and fastest up and coming acts of this
-        century. Fans affectionately refer to themselves as “The Hive” and are
-        drawn to their candid and authentic performances on stage. Looking
-        forward to touring in the future, The Bees Knees are currently recording
-        their second studio album, looking to be released in late 2021.
-      </p>
+        <h3 class="about__paratitle">The Bees Knees</h3>
+        <p>
+          The Bees Knees is a pop rock band originating from San Francisco,
+          California. The band consists of lead vocalist Bryan Teddy, guitarist
+          Mack Tolkens, guitarist Andrew Green, bassist Kent Zulkee and drummer
+          Freddie Fischer. The band achieved its first commercial success as an
+          unsigned act, drawing attention from manager Cam Adams. Having worked
+          with other popular acts (The Elephant In The Room, One Trick Pony, The
+          Cat’s Meow), Adams was confident the band could succeed even further,
+          pushing them to sign with Magenta Records.
+        </p>
+        <p>
+          From there, the band has soared, gaining international recognition and
+          ranking in the top 10 on the Poster Charts. New fans immediately fell
+          in love with the band’s original and organic attitude, solidifying
+          their place as one of the hottest and fastest up and coming acts of
+          this century. Fans affectionately refer to themselves as “The Hive”
+          and are drawn to their candid and authentic performances on stage.
+          Looking forward to touring in the future, The Bees Knees are currently
+          recording their second studio album, looking to be released in late
+          2021.
+        </p>
+      </section>
 
       <!-- End of Description -->
 
@@ -87,47 +91,47 @@
           <img
             src="./assets/images/Photo-gallery-1.jpg"
             alt="a concert photo"
-            class="gallery__photos"
+            class="gallery__photo"
           />
           <img
             src="./assets/images/Photo-gallery-2.jpg"
             alt="a concert photo"
-            class="gallery__photos"
+            class="gallery__photo"
           />
           <img
             src="./assets/images/Photo-gallery-3.jpg"
             alt="a concert photo"
-            class="gallery__photos"
+            class="gallery__photo"
           />
           <img
             src="./assets/images/Photo-gallery-4.jpg"
             alt="a concert photo"
-            class="gallery__photos"
+            class="gallery__photo"
           />
           <img
             src="./assets/images/Photo-gallery-5.jpg"
             alt="a concert photo"
-            class="gallery__photos"
+            class="gallery__photo"
           />
           <img
             src="./assets/images/Photo-gallery-6.jpg"
             alt="a concert photo"
-            class="gallery__photos"
+            class="gallery__photo"
           />
           <img
             src="./assets/images/Photo-gallery-7.jpg"
             alt="a concert photo"
-            class="gallery__photos"
+            class="gallery__photo"
           />
           <img
             src="./assets/images/Photo-gallery-8.jpg"
             alt="a concert photo"
-            class="gallery__photos"
+            class="gallery__photo"
           />
           <img
             src="./assets/images/Photo-gallery-9.jpg"
             alt="a concert photo"
-            class="gallery__photos"
+            class="gallery__photo"
           />
         </div>
 
@@ -158,29 +162,48 @@
       </div>
       <!-- INSERT 
         <a href="https://instagram.com" target="_blank">  -->
+      <div class="footer__allcontacts">
+        <div class="footer__cam">
+          <ul>
+            <li>Cam Adams</li>
+            <li>The Bees Knees Management</li>
+            <br />
+            <li>503 Broadway Penthouse, New York, NY 10012, USA</li>
+            <br />
+            <a><li>info@thebeesknees.com</li></a>
+          </ul>
+        </div>
 
-      <div class="footer__cam">
-        Cam Adams The Bees Knees Management 503 Broadway Penthouse, New York, NY
-        10012, USA info@thebeesknees.com
+        <div class="footer__pearl">
+          <ul>
+            <li>Pearl Gregg</li>
+            <li>Limitless Artist Group</li>
+            <br />
+            <li>Booking Agent for <br />US / South America / Japan</li>
+            <br /><a><li>pearl.gregg@limitlessag.com</li></a>
+          </ul>
+        </div>
+
+        <div class="footer__carson">
+          <ul>
+            <li>Carson Whyte<br />ARCH Entertainment</li>
+            <br />
+            <li>Booking Agent for UK/ EU / AU</li>
+            <a><li>cwhyte@archentertainment.com</li> </a>
+          </ul>
+        </div>
       </div>
 
-      <div class="footer__pearl">
-        Pearl Gregg \ Limitless Artist Group Booking Agent for US / South
-        America / Japan pearl.gregg@limitlessag.com
-      </div>
-
-      <div class="footer__carson">
-        Carson Whyte \ ARCH Entertainment Booking Agent for UK / EU / AU
-        cwhyte@archentertainment.com
-      </div>
-
+      <!-- Put an a tag -->
       <div class="footer__bandsite">
         <a href="./index.html" class="footer__logo"
           ><img src="./assets/logos/Logo-bandsite.svg" alt="bandsite logo icon"
         /></a>
       </div>
       <div class="footer__copyright">
-        <p>Copyright The Bees Knees © 2021 All Rights Reserved</p>
+        <ul>
+          Copyright The Bees Knees © 2021 All Rights Reserved
+        </ul>
       </div>
     </footer>
     <!-- End of Footer -->
