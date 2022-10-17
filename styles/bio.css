@@ -44,6 +44,9 @@ ul {
   align-items: center;
   width: 100%;
   color: #ffffff;
+  margin: 0;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 .navigation__menu-item--link {
   list-style: none;
@@ -52,6 +55,9 @@ ul {
   justify-content: center;
   width: 100%;
   color: #ffffff;
+}
+.navigation__menu-item--link:hover {
+  border-bottom: 3px solid #ffffff;
 }
 
 @font-face {
@@ -171,6 +177,7 @@ ul {
     gap: 1.5rem;
     justify-content: space-between;
     align-items: center margin-bottom 1rem;
+    padding: 0 4rem;
   }
 }
 
