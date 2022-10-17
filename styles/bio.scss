@@ -25,11 +25,15 @@
     url("../../../assets/images/hero-bio.jpg");
   background-size: cover;
   background-position: center;
-  height: 30vw;
+  align-items: center;
+  height: auto;
+  height: 56vw;
   display: flex;
+  font-family: $font-regular;
   flex-direction: column;
   justify-content: center;
   padding: 1rem;
+
   //*esp for hero preferably viewport width so it scales with the viewport device cause we only want it increasing decreasing based on width//
 
   @include breakpoint.medium {
@@ -39,10 +43,9 @@
 
   &__title {
     color: $white;
-    font-weight: 600;
-    font-size: 1rem;
     line-height: 2rem;
-    font-family: $font-regular;
+    font-family: $font-demi;
+    padding-right: 7rem;
 
     @include breakpoint.medium {
       font-size: 2em;
@@ -54,28 +57,37 @@
 }
 
 .about {
-  padding: 0 1 rem;
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  padding: 0 1rem;
+
+  &__quote {
+    font-family: $font-demi;
+    @include smalltypography.smallsub-header;
+  }
+
+  &__paratitle {
+    font-family: $font-regular;
+  }
 
   &__bandphoto {
     width: 100%;
     // display: block;makes it act like a block
   }
   &__title {
-    @include smalltypography.smallbody;
+    font-family: $font-demi;
+    @include smalltypography.smallsection-header;
   }
 }
+// Style restricted on para title/title - won't budge
+
 .gallery__photo {
   width: 100%;
   margin: 0 auto;
   &:hover {
     filter: grayscale(1);
   }
-}
-
-.about__container {
-  display: flex;
-  flex-direction: column;
-  background-color: $white;
 }
 
 .gallery {
