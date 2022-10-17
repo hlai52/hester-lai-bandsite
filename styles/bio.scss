@@ -95,6 +95,7 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0 1rem;
+  background-color: $alabaster;
 
   //why not margin?//
 }
@@ -106,6 +107,9 @@
   background-color: $bandsite-black;
   padding: 0 1rem;
 
+  &__title {
+    color: $white;
+  }
   &__container {
     display: flex;
     flex-direction: column;
@@ -113,7 +117,8 @@
   }
   &__social {
     display: flex;
-    gap: 85%;
+    gap: 55%;
+    @include smalltypography.smalllabels-buttons;
   }
 
   &__allcontacts {
@@ -123,5 +128,16 @@
     background-color: $bandsite-black;
     padding: 0 0rem;
     color: $white;
+    @include smalltypography.smallfooter-copy;
+  }
+
+  &__copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: $bandsite-black;
+    padding: 0 0rem;
+    color: $white;
+    @include smalltypography.smallfooter-copy;
   }
 }

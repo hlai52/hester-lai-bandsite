@@ -134,6 +134,7 @@ ul {
   flex-direction: column;
   align-items: flex-start;
   padding: 0 1rem;
+  background-color: #fafafa;
 }
 
 .footer {
@@ -143,6 +144,9 @@ ul {
   background-color: #323232;
   padding: 0 1rem;
 }
+.footer__title {
+  color: #ffffff;
+}
 .footer__container {
   display: flex;
   flex-direction: column;
@@ -150,7 +154,10 @@ ul {
 }
 .footer__social {
   display: flex;
-  gap: 85%;
+  gap: 55%;
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 700;
 }
 .footer__allcontacts {
   display: flex;
@@ -159,4 +166,18 @@ ul {
   background-color: #323232;
   padding: 0 0rem;
   color: #ffffff;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+}
+.footer__copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #323232;
+  padding: 0 0rem;
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
 }/*# sourceMappingURL=bio.css.map */
