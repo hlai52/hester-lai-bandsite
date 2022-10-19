@@ -94,7 +94,7 @@ ul {
 .hero__title {
   color: #ffffff;
   line-height: 2rem;
-  font-family: "Avenir-demi";
+  font-family: "Avenir-regular";
   padding-right: 7rem;
 }
 @media only screen and (min-width: 768px) {
@@ -108,7 +108,7 @@ ul {
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem 1rem;
 }
 @media only screen and (min-width: 768px) {
   .about {
@@ -133,6 +133,7 @@ ul {
 }
 .about__paratitle {
   font-family: "Avenir-regular";
+  margin: 0;
 }
 .about__bandphoto {
   width: 100%;
@@ -154,6 +155,7 @@ ul {
 .gallery__photo {
   width: 100%;
   margin: 0 auto;
+  padding: 0.3rem 0;
 }
 .gallery__photo:hover {
   filter: grayscale(1);
@@ -180,6 +182,9 @@ ul {
     padding: 0 4rem;
   }
 }
+.gallery__title {
+  margin: 1rem 1rem 0.4rem 0;
+}
 
 .footer {
   display: flex;
@@ -190,6 +195,7 @@ ul {
 }
 .footer__logo {
   display: inline;
+  margin-top: 3rem;
 }
 .footer__title {
   color: #ffffff;
@@ -223,6 +229,9 @@ ul {
     gap: 2.25rem;
     width: 100%;
   }
+}
+.footer__carson {
+  margin-bottom: 2rem;
 }
 .footer__copyright {
   display: flex;
