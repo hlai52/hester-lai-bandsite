@@ -109,6 +109,7 @@ ul {
   flex-direction: column;
   background-color: #ffffff;
   padding: 0 1rem 1rem 1rem;
+  color: #323232;
 }
 @media only screen and (min-width: 768px) {
   .about {
@@ -120,6 +121,7 @@ ul {
 }
 .about__quote {
   font-family: "Avenir-demi";
+  color: #323232;
   font-size: 14px;
   line-height: 22px;
   font-weight: 600;
@@ -134,12 +136,14 @@ ul {
 .about__paratitle {
   font-family: "Avenir-regular";
   margin: 0;
+  color: #323232;
 }
 .about__bandphoto {
   width: 100%;
 }
 .about__title {
   font-family: "Avenir-demi";
+  color: #323232;
   font-size: 24px;
   line-height: 32px;
   font-weight: 700;
@@ -184,6 +188,7 @@ ul {
 }
 .gallery__title {
   margin: 1rem 1rem 0.4rem 0;
+  color: #323232;
 }
 
 .footer {

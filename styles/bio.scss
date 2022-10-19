@@ -57,6 +57,7 @@
   flex-direction: column;
   background-color: $white;
   padding: 0 1rem 1rem 1rem;
+  color: $bandsite-black;
 
   @include breakpoint.medium {
     display: flex;
@@ -67,6 +68,7 @@
 
   &__quote {
     font-family: $font-demi;
+    color: $bandsite-black;
     @include smalltypography.smallsub-header;
 
     @include breakpoint.medium {
@@ -77,6 +79,7 @@
   &__paratitle {
     font-family: $font-regular;
     margin: 0;
+    color: $bandsite-black;
   }
 
   &__bandphoto {
@@ -85,6 +88,7 @@
   }
   &__title {
     font-family: $font-demi;
+    color: $bandsite-black;
     @include smalltypography.smallsection-header;
 
     @include breakpoint.medium {
@@ -122,6 +126,7 @@
   }
   &__title {
     margin: 1rem 1rem 0.4rem 0;
+    color: $bandsite-black;
   }
 }
 
