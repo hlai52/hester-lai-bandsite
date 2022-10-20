@@ -1,4 +1,9 @@
 @use "./colors" as *;
+@use "./fonts" as *;
+
+@use "../partials/smalltypography" as smalltypography;
+@use "./largetypography" as typography;
+@use "./breakpoint" as breakpoint;
 
 html,
 body {
@@ -30,38 +35,52 @@ ul {
   align-items: center;
   background: $bandsite-black;
 
-  &__logo {
-    padding-top: 1rem;
-    display: inline;
-  }
-
-  &__container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  &__menu-item {
-    list-style: none;
-    display: flex;
+  @include breakpoint.medium {
+    // display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    color: $white;
-    margin: 0;
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
+    padding: 1rem 1rem 1.5rem 3rem;
 
-    &--link {
+    &__logo {
+      padding-top: 1rem;
+      display: inline;
+      @include breakpoint.medium {
+        padding-top: 0.6rem;
+      }
+    }
+
+    &__container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      @include breakpoint.medium {
+        justify-content: flex-start;
+        width: 50%;
+      }
+    }
+
+    &__menu-item {
       list-style: none;
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
       width: 100%;
       color: $white;
-      &:hover {
-        border-bottom: 3px solid $white;
+      margin: 0;
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+
+      &--link {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        color: $white;
+        &:hover {
+          border-bottom: 3px solid $white;
+        }
       }
     }
   }

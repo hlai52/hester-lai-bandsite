@@ -33,9 +33,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 1rem;
-
   //*esp for hero preferably viewport width so it scales with the viewport device cause we only want it increasing decreasing based on width//
-
   &__title {
     color: $white;
     line-height: 2rem;
@@ -63,7 +61,8 @@
     display: flex;
     flex-direction: column;
     background-color: $white;
-    padding: 0 4rem;
+    padding: 3rem 2.25rem 2.25rem 2.5rem;
+    // padding: 0 4rem;
   }
 
   &__quote {
@@ -82,6 +81,14 @@
     color: $bandsite-black;
   }
 
+  &__paracontainer {
+    display: flex;
+    flex-direction: column;
+    @include breakpoint.medium {
+      flex-direction: row;
+    }
+  }
+
   &__bandphoto {
     width: 100%;
     // display: block;makes it act like a block
@@ -98,18 +105,6 @@
 }
 // Style restricted on para title/title - won't budge
 
-.gallery__photo {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0.3rem 0;
-  &:hover {
-    filter: grayscale(1);
-  }
-  @include breakpoint.medium {
-    max-width: 31%;
-  }
-}
-
 .gallery {
   display: flex;
   flex-direction: column;
@@ -122,15 +117,31 @@
     gap: 1.5rem;
     justify-content: space-between;
     align-items: center margin-bottom 1rem;
-    padding: 0 4rem;
+    padding: 0 2.25rem 2.25rem 2.25rem;
   }
   &__title {
     margin: 1rem 1rem 0.4rem 0;
     color: $bandsite-black;
+
+    @include breakpoint.medium {
+      @include typography.section-header;
+      font-family: $font-demi;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.3rem 0;
+    &:hover {
+      filter: grayscale(1);
+    }
+    @include breakpoint.medium {
+      max-width: 31%;
+      margin: 0.4rem;
+    }
   }
 }
-
-//why not margin?//
 
 .footer {
   display: flex;
@@ -138,54 +149,75 @@
   align-items: flex-start;
   background-color: $bandsite-black;
   padding: 0 1rem;
+  @include breakpoint.medium {
+    padding-left: 2.25rem;
 
-  &__logo {
-    display: inline;
-    margin-top: 3rem;
-  }
-
-  &__title {
-    color: $white;
-  }
-  &__container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
-
-  &__social {
-    display: flex;
-    gap: 55%;
-    @include smalltypography.smalllabels-buttons;
-  }
-
-  &__allcontacts {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: $bandsite-black;
-    padding: 0 0rem;
-    color: $white;
-    @include smalltypography.smallfooter-copy;
-    @include breakpoint.medium {
-      flex-direction: row;
-      gap: 2.25rem;
-      width: 100%;
+    &__logo {
+      display: inline;
+      margin-top: 3rem;
+      @include breakpoint.medium {
+      }
     }
-  }
 
-  &__carson {
-    // padding-bottom: 2rem;
-    margin-bottom: 2rem;
-  }
+    &__title {
+      color: $white;
 
-  &__copyright {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: $bandsite-black;
-    padding: 0 0rem;
-    color: $white;
-    @include smalltypography.smallfooter-copy;
+      @include breakpoint.medium {
+        @include typography.section-header;
+        font-family: $font-demi;
+        letter-spacing: 0.1rem;
+      }
+    }
+    &__container {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    &__social {
+      display: flex;
+      gap: 55%;
+      @include smalltypography.smalllabels-buttons;
+    }
+
+    &__allcontacts {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: $bandsite-black;
+      padding: 0 0rem;
+      color: $white;
+      @include smalltypography.smallfooter-copy;
+      @include breakpoint.medium {
+        flex-direction: row;
+        gap: 2.25rem;
+        width: 100%;
+
+        // @include breakpoint.medium {
+        //   padding-left: 2.25rem;
+        // }
+      }
+    }
+
+    &__carson {
+      // padding-bottom: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    &__cam {
+      @include breakpoint.medium {
+        // width: 30%;
+      }
+    }
+
+    &__copyright {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: $bandsite-black;
+      padding: 0 0rem;
+      color: $white;
+      @include smalltypography.smallfooter-copy;
+    }
   }
 }
