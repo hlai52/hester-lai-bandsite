@@ -57,12 +57,17 @@
   padding: 0 1rem 1rem 1rem;
   color: $bandsite-black;
 
+  @include breakpoint.large {
+    padding: 0 2.25rem 0 2.25rem;
+    margin: 0 10rem 0 6rem;
+  }
+
   @include breakpoint.medium {
     display: flex;
     flex-direction: column;
     background-color: $white;
     padding: 3rem 2.25rem 2.25rem 2.5rem;
-    // padding: 0 4rem;
+    // padding: 0 4rem;}
   }
 
   &__quote {
@@ -73,12 +78,24 @@
     @include breakpoint.medium {
       @include typography.sub-header;
     }
+
+    @include breakpoint.large {
+      padding-left: 2rem;
+    }
   }
 
   &__paratitle {
     font-family: $font-regular;
     margin: 0;
     color: $bandsite-black;
+    @include breakpoint.medium {
+      @include typography.sub-header;
+      font-family: $font-demi;
+
+      @include breakpoint.large {
+        padding-left: 2rem;
+      }
+    }
   }
 
   &__paracontainer {
@@ -86,12 +103,20 @@
     flex-direction: column;
     @include breakpoint.medium {
       flex-direction: row;
+      gap: 2.25rem;
+      margin-bottom: 2.25rem;
+    }
+    @include breakpoint.large {
+      padding-left: 2rem;
     }
   }
 
   &__bandphoto {
     width: 100%;
     // display: block;makes it act like a block
+    @include breakpoint.large {
+      padding-left: 2rem;
+    }
   }
   &__title {
     font-family: $font-demi;
@@ -119,6 +144,10 @@
     align-items: center margin-bottom 1rem;
     padding: 0 2.25rem 2.25rem 2.25rem;
   }
+
+  @include breakpoint.large {
+    padding: 0 6rem 1rem 6rem;
+  }
   &__title {
     margin: 1rem 1rem 0.4rem 0;
     color: $bandsite-black;
@@ -139,85 +168,6 @@
     @include breakpoint.medium {
       max-width: 31%;
       margin: 0.4rem;
-    }
-  }
-}
-
-.footer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: $bandsite-black;
-  padding: 0 1rem;
-  @include breakpoint.medium {
-    padding-left: 2.25rem;
-
-    &__logo {
-      display: inline;
-      margin-top: 3rem;
-      @include breakpoint.medium {
-      }
-    }
-
-    &__title {
-      color: $white;
-
-      @include breakpoint.medium {
-        @include typography.section-header;
-        font-family: $font-demi;
-        letter-spacing: 0.1rem;
-      }
-    }
-    &__container {
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    &__social {
-      display: flex;
-      gap: 55%;
-      @include smalltypography.smalllabels-buttons;
-    }
-
-    &__allcontacts {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      background-color: $bandsite-black;
-      padding: 0 0rem;
-      color: $white;
-      @include smalltypography.smallfooter-copy;
-      @include breakpoint.medium {
-        flex-direction: row;
-        gap: 2.25rem;
-        width: 100%;
-
-        // @include breakpoint.medium {
-        //   padding-left: 2.25rem;
-        // }
-      }
-    }
-
-    &__carson {
-      // padding-bottom: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    &__cam {
-      @include breakpoint.medium {
-        // width: 30%;
-      }
-    }
-
-    &__copyright {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      background-color: $bandsite-black;
-      padding: 0 0rem;
-      color: $white;
-      @include smalltypography.smallfooter-copy;
     }
   }
 }

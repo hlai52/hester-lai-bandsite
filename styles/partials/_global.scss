@@ -39,49 +39,187 @@ ul {
     // display: flex;
     flex-direction: row;
     padding: 1rem 1rem 1.5rem 3rem;
+  }
+  @include breakpoint.large {
+    flex-drection: row;
+  }
 
-    &__logo {
-      padding-top: 1rem;
-      display: inline;
-      @include breakpoint.medium {
-        padding-top: 0.6rem;
-      }
+  &__logo {
+    padding-top: 1rem;
+    display: inline;
+    @include breakpoint.medium {
+      padding-top: 0.6rem;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    @include breakpoint.medium {
+      justify-content: flex-start;
+      width: 50%;
     }
 
-    &__container {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-
-      @include breakpoint.medium {
-        justify-content: flex-start;
-        width: 50%;
-      }
+    @include breakpoint.large {
+      justify-content: flex-start;
     }
+  }
 
-    &__menu-item {
+  &__menu-item {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: $white;
+    margin: 0;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+
+    &--link {
       list-style: none;
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: center;
       width: 100%;
       color: $white;
-      margin: 0;
-      margin-top: 0.25rem;
-      margin-bottom: 0.25rem;
-
-      &--link {
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
-        color: $white;
-        &:hover {
-          border-bottom: 3px solid $white;
-        }
+      &:hover {
+        border-bottom: 3px solid $white;
       }
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: $bandsite-black;
+  padding: 0 1rem;
+  color: $white;
+  @include breakpoint.medium {
+    padding-left: 2.25rem;
+    @include typography.sub-header;
+  }
+
+  @include breakpoint.large {
+    padding-top: 2rem;
+    padding-left: 7rem;
+    padding-bottom: 2rem;
+  }
+
+  &__logo {
+    display: inline;
+    margin-top: 3rem;
+    @include breakpoint.medium {
+      position: absolute;
+      right: 4rem;
+      top: 148rem;
+    }
+    @include breakpoint.large {
+      position: absolute;
+      top: 180rem;
+      right: 9rem;
+    }
+  }
+
+  &__title {
+    color: $white;
+    font-family: $font-demi;
+
+    @include breakpoint.medium {
+      @include typography.section-header;
+      font-family: $font-demi;
+      letter-spacing: 0.2rem;
+    }
+    @include breakpoint.large {
+      @include typography.section-header;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__social {
+    display: flex;
+    @include breakpoint.small {
+      gap: 55%;
+
+      @include smalltypography.smalllabels-buttons;
+    }
+
+    @include breakpoint.medium {
+      position: absolute;
+      bottom: 2rem;
+      left: 17rem;
+      gap: 55%;
+    }
+    @include breakpoint.large {
+      @include typography.footer-copy;
+    }
+  }
+
+  &__allcontacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: $bandsite-black;
+    padding: 0 0rem;
+    color: $white;
+    @include smalltypography.smallfooter-copy;
+
+    @include breakpoint.medium {
+      flex-direction: row;
+      gap: 2.25rem;
+      width: 100%;
+
+      // @include breakpoint.medium {
+      //   padding-left: 2.25rem;
+      // }
+    }
+  }
+
+  &__carson {
+    margin-bottom: 2rem;
+    @include breakpoint.medium {
+      width: 33%;
+      @include typography.footer-copy;
+    }
+    @include breakpoint.large {
+      width: 80%;
+    }
+  }
+
+  &__pearl {
+    @include breakpoint.medium {
+      @include typography.footer-copy;
+      width: 33%;
+    }
+  }
+
+  &__cam {
+    @include breakpoint.medium {
+      width: 33%;
+      @include typography.footer-copy;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: $bandsite-black;
+    padding: 0 0rem;
+    color: $white;
+    @include smalltypography.smallfooter-copy;
+
+    @include breakpoint.medium {
+      @include typography.footer-copy;
     }
   }
 }
