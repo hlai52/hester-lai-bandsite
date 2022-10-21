@@ -111,18 +111,33 @@ ul {
     padding-bottom: 2rem;
   }
 
+  &__header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    @include breakpoint.medium {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
+
   &__logo {
-    display: inline;
+    flex: 1;
     margin-top: 3rem;
     @include breakpoint.medium {
-      position: absolute;
-      right: 4rem;
-      top: 148rem;
+      display: none;
+      visibility: hidden;
     }
-    @include breakpoint.large {
-      position: absolute;
-      top: 180rem;
-      right: 9rem;
+
+    &-header {
+      display: none;
+      visibility: hidden;
+      @include breakpoint.medium {
+        display: inline;
+        visibility: visible;
+        padding-right: 5rem;
+      }
     }
   }
 
@@ -139,27 +154,23 @@ ul {
       @include typography.section-header;
     }
   }
-  &__container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
 
   &__social {
     display: flex;
-    @include breakpoint.small {
-      gap: 55%;
-
-      @include smalltypography.smalllabels-buttons;
-    }
+    flex: 1;
+    width: 7rem;
+    justify-content: space-between;
+    @include smalltypography.smalllabels-buttons;
 
     @include breakpoint.medium {
-      position: absolute;
-      bottom: 2rem;
-      left: 17rem;
-      gap: 55%;
+      padding-left: 1rem;
+      justify-content: flex-start;
+      gap: 2rem;
     }
     @include breakpoint.large {
+      padding-left: 4rem;
+      justify-content: flex-start;
+      gap: 4rem;
       @include typography.footer-copy;
     }
   }
