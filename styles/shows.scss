@@ -1,0 +1,82 @@
+// Questions
+@use "./partials/global";
+@use "./partials/fonts" as *;
+@use "./partials/colors" as *;
+
+//because +you use all the colors and the * is not used for hte bottom cause you want to refer to certain parts of the file
+@use "./partials/smalltypography" as smalltypography;
+@use "./partials/largetypography" as typography;
+@use "./partials/breakpoint" as breakpoint;
+// tips when Importing files and needing to use the color
+
+// $font-regular: "Avenir-regular";
+// $font-demi: "Avenir-demi";
+// $font-bold: "Avenir-bold";
+// when Importing files and needing to use the color @use @mixin *breakpoint and wrappers
+
+.showshero {
+  background: url(../assets/images/hero-shows.jpg);
+  background-size: cover;
+  justify-content: center;
+  background-position: 0ch;
+  align-items: baseline;
+  flex-direction: column;
+  background-color: rgba(50, 50, 50, 0.5);
+  background-blend-mode: darken;
+  min-height: 400px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 1rem;
+  }
+
+  //my text
+  //   background: linear-gradient(
+  //       to bottom,
+  //       rgba(50, 50, 50, 0.534),
+  //       rgba(50, 50, 50, 0.5)
+  //     ),
+  //     url("../assets/images/hero-shows.jpg");
+  //   background-size: cover;
+  //   background-position: center;
+  //   align-items: center;
+  //   height: auto;
+  //   height: 56vw;
+  //   display: flex;
+  //   font-family: $font-regular;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   padding: 1rem;
+
+  //*esp for hero preferably viewport width so it scales with the viewport device cause we only want it increasing decreasing based on width//
+  &__album {
+    color: $white;
+    line-height: 2rem;
+    font-family: $font-regular;
+    padding-right: 7rem;
+
+    @include breakpoint.medium {
+      //   font-size: 3em;
+      //   max-height: 2rem;
+      //   padding-right: 50%;
+    }
+    @include breakpoint.large {
+    }
+  }
+  &__title {
+    color: $white;
+    line-height: 1rem;
+    font-family: $font-regular;
+    padding-right: 7rem;
+
+    @include breakpoint.medium {
+      //   font-size: 3em;
+      //   max-height: 2rem;
+      //   padding-right: 50%;
+    }
+    @include breakpoint.large {
+    }
+  }
+}
