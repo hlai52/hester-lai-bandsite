@@ -41,7 +41,7 @@ ul {
     padding: 1rem 1rem 1.5rem 3rem;
   }
   @include breakpoint.large {
-    flex-drection: row;
+    flex-direction: row;
   }
 
   &__logo {
