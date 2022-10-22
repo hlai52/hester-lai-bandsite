@@ -41,5 +41,28 @@ const shows = [
 
 const render = () => {
   const showListContainer = document.querySelector(".show");
+  const show = shows[0];
+  const showInfoCard = document.createElement("div");
+  showInfoCard.classList.add("show__info");
+
+  const showDate = document.createElement("div");
+  showDate.classList.add("show__date");
+
+  const showDateTitle = document.createElement("div");
+  showDateTitle.classList.add("show__date-title");
+  showDateTitle.innerHTML = "Date";
+
+  const showDateValue = document.createElement("div");
+  showDateValue.classList.add("show__date-value");
+  showDateValue.innerHTML = show.date;
+
+  showDate.appendChild(showDateTitle);
+  showDate.appendChild(showDateValue);
+
+  showInfoCard.appendChild(showDate);
+
+  showListContainer.appendChild(showInfoCard);
 };
 //create avatar in JS
+
+render();
