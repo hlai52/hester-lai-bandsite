@@ -77,13 +77,20 @@ const render = () => {
       show.location
     );
     showInfoCard.appendChild(showLocation);
+
+    const submit = document.createElement("button");
+    submit.innerHTML = "Buy Tickets";
+    submit.classList = "shows__button";
+
+    showListContainer.appendChild(submit);
   });
 };
 //create avatar in JS
 
 render();
 
-// const showDate = document.createElement("div");
+// original code before utuilizing functions shortcut to clean up code:
+//const showDate = document.createElement("div");
 // showDate.classList.add("show__date");
 
 // const showDateTitle = document.createElement("div");
