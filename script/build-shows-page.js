@@ -39,30 +39,60 @@ const shows = [
   },
 ];
 
+// createListValue("show__date", "Date", show.date)
+const createListValue = (className, title, value) => {
+  const mainDiv = document.createElement("div");
+  mainDiv.classList.add(`${className}`);
+
+  const titleDiv = document.createElement("div");
+  titleDiv.classList.add(`${className}-title`);
+  titleDiv.innerHTML = title;
+
+  const valueDiv = document.createElement("div");
+  valueDiv.classList.add(`${className}-value`);
+  valueDiv.innerHTML = value;
+
+  mainDiv.appendChild(titleDiv);
+  mainDiv.appendChild(valueDiv);
+  return mainDiv;
+};
+
 const render = () => {
   const showListContainer = document.querySelector(".show");
-  const show = shows[0];
-  const showInfoCard = document.createElement("div");
-  showInfoCard.classList.add("show__info");
 
-  const showDate = document.createElement("div");
-  showDate.classList.add("show__date");
+  shows.forEach((show) => {
+    const showInfoCard = document.createElement("div");
+    showInfoCard.classList.add("show__info");
+    showListContainer.appendChild(showInfoCard);
 
-  const showDateTitle = document.createElement("div");
-  showDateTitle.classList.add("show__date-title");
-  showDateTitle.innerHTML = "Date";
+    const showDate = createListValue("show__date", "Date", show.date);
+    showInfoCard.appendChild(showDate);
 
-  const showDateValue = document.createElement("div");
-  showDateValue.classList.add("show__date-value");
-  showDateValue.innerHTML = show.date;
+    const showVenue = createListValue("show__venue", "Venue", show.venue);
+    showInfoCard.appendChild(showVenue);
 
-  showDate.appendChild(showDateTitle);
-  showDate.appendChild(showDateValue);
-
-  showInfoCard.appendChild(showDate);
-
-  showListContainer.appendChild(showInfoCard);
+    const showLocation = createListValue(
+      "show__location",
+      "Location",
+      show.location
+    );
+    showInfoCard.appendChild(showLocation);
+  });
 };
 //create avatar in JS
 
 render();
+
+// const showDate = document.createElement("div");
+// showDate.classList.add("show__date");
+
+// const showDateTitle = document.createElement("div");
+// showDateTitle.classList.add("show__date-title");
+// showDateTitle.innerHTML = "Date";
+
+// const showDateValue = document.createElement("div");
+// showDateValue.classList.add("show__date-value");
+// showDateValue.innerHTML = show.date;
+
+// showDate.appendChild(showDateTitle);
+// showDate.appendChild(showDateValue);
