@@ -451,6 +451,11 @@ ul {
   display: flex;
   flex-direction: column;
 }
+@media only screen and (min-width: 768px) {
+  .form {
+    align-items: center;
+  }
+}
 .form__header {
   font-family: "Avenir-regular";
   padding-top: 0.5rem;
@@ -464,6 +469,11 @@ ul {
   height: 2rem;
   margin-top: 1.5rem;
   margin-left: 1rem;
+}
+@media only screen and (min-width: 768px) {
+  .form__avatar {
+    align-items: center;
+  }
 }
 .form__content {
   display: flex;
@@ -494,6 +504,16 @@ ul {
   margin: 1rem;
   width: 100%;
 }
+@media only screen and (min-width: 768px) {
+  .reviews__container {
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .reviews__content {
+    width: 60%;
+  }
+}
 .reviews__header {
   display: flex;
   flex-direction: row;
@@ -501,4 +521,13 @@ ul {
 }
 .reviews__name {
   font-weight: bold;
+}
+
+.comment__field {
+  width: 80%;
+}
+
+.form__name-field {
+  width: 20%;
+  padding-top: 2rem;
 }/*# sourceMappingURL=bio.css.map */

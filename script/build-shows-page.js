@@ -61,6 +61,10 @@ const render = () => {
   const showListContainer = document.querySelector(".show");
 
   shows.forEach((show) => {
+    // const showContainer = document.createElement("div");
+    // showContainer.classList.add("show__container");
+    // showContainer.appendChild(showInfoCard);
+
     const showInfoCard = document.createElement("div");
     showInfoCard.classList.add("show__info");
     showListContainer.appendChild(showInfoCard);

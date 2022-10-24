@@ -309,4 +309,32 @@ ul {
   display: flex;
   padding-top: 4rem;
   width: 50%;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  margin-left: 2rem;
+  padding-bottom: 2rem;
+}
+@media only screen and (min-width: 768px) {
+  .show {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .show__date-title {
+    display: flex;
+    flex-direction: row;
+  }
+}
+.shows__button {
+  width: 80%;
+}
+@media only screen and (min-width: 768px) {
+  .shows__button {
+    width: 30%;
+    height: 20%;
+  }
 }/*# sourceMappingURL=shows.css.map */

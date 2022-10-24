@@ -67,3 +67,38 @@
     width: 50%;
   }
 }
+
+.show {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  margin-left: 2rem;
+  padding-bottom: 2rem;
+
+  @include breakpoint.medium {
+    flex-direction: column;
+  }
+
+  &__date-title {
+    @include breakpoint.medium {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__venue {
+    @include breakpoint.medium {
+      // display: flex;
+      // flex-direction: row;
+    }
+  }
+}
+
+.shows__button {
+  width: 80%;
+
+  @include breakpoint.medium {
+    width: 30%;
+    height: 20%;
+  }
+}

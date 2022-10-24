@@ -175,6 +175,9 @@
 .form {
   display: flex;
   flex-direction: column;
+  @include breakpoint.medium {
+    align-items: center;
+  }
 
   &__header {
     font-family: $font-regular;
@@ -190,6 +193,9 @@
     height: 2rem;
     margin-top: 1.5rem;
     margin-left: 1rem;
+    @include breakpoint.medium {
+      align-items: center;
+    }
   }
 
   &__content {
@@ -225,6 +231,15 @@
     flex-direction: column;
     margin: 1rem;
     width: 100%;
+    @include breakpoint.medium {
+      align-items: center;
+    }
+  }
+
+  &__content {
+    @include breakpoint.medium {
+      width: 60%;
+    }
   }
 
   &__header {
@@ -236,4 +251,13 @@
   &__name {
     font-weight: bold;
   }
+}
+.comment__field {
+  width: 80%;
+}
+
+.form__name-field {
+  width: 20%;
+
+  padding-top: 2rem;
 }
