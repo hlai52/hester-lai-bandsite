@@ -86,7 +86,7 @@ const render = () => {
     submit.innerHTML = "Buy Tickets";
     submit.classList = "shows__button";
 
-    showListContainer.appendChild(submit);
+    showInfoCard.appendChild(submit);
   });
 };
 

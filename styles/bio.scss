@@ -212,9 +212,20 @@
 }
 
 .reviews {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    @include breakpoint.medium {
+      align-items: center;
+    }
+  }
+
   &__card {
     display: flex;
     flex-direction: row;
+    @include breakpoint.medium {
+      max-width: 30rem;
+    }
   }
 
   &__avatar {

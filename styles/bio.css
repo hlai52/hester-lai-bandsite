@@ -486,9 +486,23 @@ ul {
   width: 100%;
 }
 
+.reviews__list {
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (min-width: 768px) {
+  .reviews__list {
+    align-items: center;
+  }
+}
 .reviews__card {
   display: flex;
   flex-direction: row;
+}
+@media only screen and (min-width: 768px) {
+  .reviews__card {
+    max-width: 30rem;
+  }
 }
 .reviews__avatar {
   border-radius: 50%;

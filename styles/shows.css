@@ -323,12 +323,40 @@ ul {
     flex-direction: column;
   }
 }
+.show__info {
+  display: flex;
+  flex-direction: column;
+}
 @media only screen and (min-width: 768px) {
-  .show__date-title {
-    display: flex;
+  .show__info {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .show__info {
     flex-direction: row;
   }
 }
+@media only screen and (min-width: 768px) {
+  .show__date-title {
+    display: none;
+  }
+}
+.show__date-value {
+  font-weight: bold;
+}
+@media only screen and (min-width: 768px) {
+  .show__venue-title {
+    display: none;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .show__location-title {
+    display: none;
+  }
+}
+
 .shows__button {
   width: 80%;
 }
