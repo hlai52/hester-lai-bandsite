@@ -1,49 +1,66 @@
-// Add a comment section form
-
-const formEl = document.getElementById("convoform");
-
-formEl.addEventListener("submit", (event) => {
-  event.preventDefault();
-  formEl.innerText = "";
-
-  event.target.name.value;
-
-  event.target.comment.value;
-});
-
-const headingEl = document.create;
-
-// Band Review information
 const uniqueID = () => Math.random().toString(36).substring(2, 9);
+
+// Get random photos for avatars
+const getPhotoUrl = () =>
+  `https://loremflickr.com/350/350?random=${Math.floor(Math.random() * 1000)}`;
 
 const comments = [
   {
     id: uniqueID(),
-    picture:
-      "https://scontent-sea1-1.xx.fbcdn.net/v/t39.30808-1/273616670_10219528809645408_2353559906002298171_n.jpg?stp=c0.13.40.40a_cp0_dst-jpg_p40x40&_nc_cat=102&ccb=1-7&_nc_sid=7206a8&_nc_ohc=dmd6y1FCdoAAX8F8Qf8&_nc_ht=scontent-sea1-1.xx&oh=00_AT9WSNnV6zDc7TNcV0fss-KsOoqQD8pdtlj0ZNtrrVMf9g&oe=635ABD70",
+    picture: getPhotoUrl(),
     name: "Connor Walton",
     time: "02/17/2021",
     text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
   },
   {
     id: uniqueID(),
-    picture:
-      "https://scontent-sea1-1.xx.fbcdn.net/v/t39.30808-1/273616670_10219528809645408_2353559906002298171_n.jpg?stp=c0.13.40.40a_cp0_dst-jpg_p40x40&_nc_cat=102&ccb=1-7&_nc_sid=7206a8&_nc_ohc=dmd6y1FCdoAAX8F8Qf8&_nc_ht=scontent-sea1-1.xx&oh=00_AT9WSNnV6zDc7TNcV0fss-KsOoqQD8pdtlj0ZNtrrVMf9g&oe=635ABD70",
+    picture: getPhotoUrl(),
     name: "Emilie Beach",
     time: "01/09/2021",
     text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
   },
   {
     id: uniqueID(),
-    picture:
-      "https://scontent-sea1-1.xx.fbcdn.net/v/t39.30808-1/273616670_10219528809645408_2353559906002298171_n.jpg?stp=c0.13.40.40a_cp0_dst-jpg_p40x40&_nc_cat=102&ccb=1-7&_nc_sid=7206a8&_nc_ohc=dmd6y1FCdoAAX8F8Qf8&_nc_ht=scontent-sea1-1.xx&oh=00_AT9WSNnV6zDc7TNcV0fss-KsOoqQD8pdtlj0ZNtrrVMf9g&oe=635ABD70",
+    picture: getPhotoUrl(),
     name: "Miles Acosta",
     time: "01/09/2021",
     text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
   },
 ];
 
-const renderComment = (comment) => {
+// format dd/mm/yyyy
+const formatDate = (date) => {
+  const yyyy = date.getFullYear();
+  let mm = date.getMonth() + 1;
+  let dd = date.getDate();
+  if (dd < 10) dd = "0" + dd;
+  if (mm < 10) mm = "0" + mm;
+  return dd + "/" + mm + "/" + yyyy;
+};
+
+const formEl = document.getElementById("convoform");
+formEl.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  // Add new comment to the array
+  comments.unshift({
+    id: uniqueID(),
+    picture: getPhotoUrl(),
+    name: event.target.name.value,
+    time: formatDate(new Date()),
+    text: event.target.comment.value,
+  });
+
+  // reset form
+  event.target.name.value = "";
+  event.target.comment.value = "";
+
+  // render all comments again
+  render();
+});
+
+// Render an individual comment and add it to reviews__list
+const displayComment = (comment) => {
   const commentsContainer = document.querySelector(".reviews__list");
 
   const commentsCard = document.createElement("div");
@@ -82,10 +99,8 @@ const renderComment = (comment) => {
 
 const render = () => {
   const commentsContainer = document.querySelector(".reviews__list");
-
   commentsContainer.innerHTML = "";
-
-  comments.forEach(renderComment);
+  comments.forEach(displayComment);
 };
 
 render();

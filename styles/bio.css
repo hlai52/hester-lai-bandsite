@@ -447,20 +447,39 @@ ul {
   }
 }
 
-.reviews__card {
+.form {
   display: flex;
   flex-direction: column;
 }
+.form__header {
+  font-family: "Avenir-regular";
+  padding-top: 0.5rem;
+  line-height: 1.375rem;
+  margin: 1.25rem 0;
+}
+
+.reviews__card {
+  display: flex;
+  flex-direction: row;
+}
 .reviews__avatar {
   border-radius: 50%;
+  background-color: gray;
   width: 2rem;
   height: 2rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
 }
 .reviews__container {
   display: flex;
   flex-direction: column;
+  margin: 1rem;
 }
 .reviews__header {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+.reviews__name {
+  font-weight: bold;
 }/*# sourceMappingURL=bio.css.map */
