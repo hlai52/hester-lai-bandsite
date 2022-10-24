@@ -79,17 +79,46 @@
     flex-direction: column;
   }
 
-  &__date-title {
-    @include breakpoint.medium {
-      display: flex;
-      flex-direction: row;
-    }
-  }
-
   &__venue {
     @include breakpoint.medium {
       // display: flex;
       // flex-direction: row;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    @include breakpoint.medium {
+      // display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    @include breakpoint.large {
+      // display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__date-title {
+    @include breakpoint.medium {
+      display: none;
+    }
+  }
+
+  &__date-value {
+    font-weight: bold;
+  }
+
+  &__venue-title {
+    @include breakpoint.medium {
+      display: none;
+    }
+  }
+
+  &__location-title {
+    @include breakpoint.medium {
+      display: none;
     }
   }
 }
