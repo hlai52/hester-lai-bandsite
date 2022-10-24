@@ -445,4 +445,22 @@ ul {
     max-width: 31%;
     margin: 0.4rem;
   }
+}
+
+.reviews__card {
+  display: flex;
+  flex-direction: column;
+}
+.reviews__avatar {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+}
+.reviews__container {
+  display: flex;
+  flex-direction: column;
+}
+.reviews__header {
+  display: flex;
+  flex-direction: row;
 }/*# sourceMappingURL=bio.css.map */

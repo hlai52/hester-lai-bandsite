@@ -85,7 +85,6 @@ const render = () => {
     showListContainer.appendChild(submit);
   });
 };
-//create avatar in JS
 
 render();
 
