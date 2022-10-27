@@ -1,3 +1,23 @@
+//goes into index page html
+
+//
+//api key
+// {"api_key":"f2b00800-3d32-4544-877c-4a94a8b11418"}
+//inside then
+//comments array api
+const apiURL =
+  "https://project-1-api.herokuapp.com/comments?api_key=f2b00800-3d32-4544-877c-4a94a8b11418";
+
+axios
+  .get(apiURL)
+  .then((response) => {
+    console.log(response.data);
+  })
+
+  .catch((error) => {
+    console.log(error);
+  });
+
 const uniqueID = () => Math.random().toString(36).substring(2, 9);
 
 // Get random photos for avatars
