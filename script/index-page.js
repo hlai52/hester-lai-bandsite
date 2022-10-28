@@ -8,6 +8,36 @@
 const apiURL =
   "https://project-1-api.herokuapp.com/comments?api_key=f2b00800-3d32-4544-877c-4a94a8b11418";
 
+//create funciton to get comments, make a post then clear the exisiting comments, then call that getting comment function, when posting comment, clears everything out and gets 4 comments and updates
+
+const serverUrl = "https://project-1-api.herokuapp.com";
+let api_key = "";
+const refreshApiKey = () => {
+  return axios.get(`${serverUrl}/register`).then((response) => {
+    api_key = response.data.api_key;
+  });
+};
+
+const getComments = () => {
+  return axios
+    .get(`${serverUrl}/comments?api_key=${api_key}`)
+    .then((result) => {
+      const commentsContainer = document.querySelector(".reviews__list");
+      commentsContainer.innerHTML = "";
+      result.data
+        .map((comment) => {
+          return {
+            id: uniqueID(),
+            picture: getPhotoUrl(),
+            name: `${comment.name}`,
+            time: `${formatDate(comment.timestamp)}`,
+            text: `${comment.comment}`,
+          };
+        })
+        .forEach(displayComment);
+    });
+};
+
 axios
   .get(apiURL)
   .then((response) => {
@@ -24,32 +54,9 @@ const uniqueID = () => Math.random().toString(36).substring(2, 9);
 const getPhotoUrl = () =>
   `https://loremflickr.com/350/350?random=${Math.floor(Math.random() * 1000)}`;
 
-const comments = [
-  {
-    id: uniqueID(),
-    picture: getPhotoUrl(),
-    name: "Connor Walton",
-    time: "02/17/2021",
-    text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-  {
-    id: uniqueID(),
-    picture: getPhotoUrl(),
-    name: "Emilie Beach",
-    time: "01/09/2021",
-    text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    id: uniqueID(),
-    picture: getPhotoUrl(),
-    name: "Miles Acosta",
-    time: "01/09/2021",
-    text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
-
 // format dd/mm/yyyy
-const formatDate = (date) => {
+const formatDate = (dateStr) => {
+  const date = new Date(dateStr);
   const yyyy = date.getFullYear();
   let mm = date.getMonth() + 1;
   let dd = date.getDate();
@@ -118,9 +125,7 @@ const displayComment = (comment) => {
 };
 
 const render = () => {
-  const commentsContainer = document.querySelector(".reviews__list");
-  commentsContainer.innerHTML = "";
-  comments.forEach(displayComment);
+  refreshApiKey().then(getComments);
 };
 
 render();
