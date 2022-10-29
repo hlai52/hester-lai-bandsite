@@ -1,45 +1,38 @@
-const uniqueId = () => Math.random().toString(36).substring(2, 9);
+const serverUrl = "https://project-1-api.herokuapp.com";
+let api_key = "";
 
-const shows = [
-  {
-    id: uniqueId(),
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    id: uniqueId(),
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    id: uniqueId(),
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    id: uniqueId(),
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    id: uniqueId(),
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    id: uniqueId(),
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+const uniqueID = () => Math.random().toString(36).substring(2, 9);
 
-// createListValue("show__date", "Date", show.date)
+const refreshApiKey = () => {
+  return axios
+    .get(`${serverUrl}/register`)
+    .then((response) => {
+      api_key = response.data.api_key;
+    })
+    .catch((error) => {
+      alert(error);
+    });
+};
+
+const getShows = () => {
+  return axios
+    .get(`${serverUrl}/showdates?api_key=${api_key}`)
+    .then((result) => {
+      const showContainer = document.querySelector(".show");
+      showContainer.innerHTML = "";
+      const showsToDisplay = result.data.map((show) => {
+        return {
+          id: uniqueID(),
+          date: `${show.date}`,
+          venue: `${show.place}`,
+          location: `${show.location}`,
+        };
+      });
+
+      showsToDisplay.forEach((show) => displayShow(show));
+    });
+};
+
 const createListValue = (className, title, value) => {
   const mainDiv = document.createElement("div");
   mainDiv.classList.add(`${className}`);
@@ -57,37 +50,38 @@ const createListValue = (className, title, value) => {
   return mainDiv;
 };
 
-const render = () => {
+const displayShow = (show) => {
   const showListContainer = document.querySelector(".show");
+  const showContainer = document.createElement("div");
+  showContainer.classList.add("show__container");
+  //showContainer.appendChild(showInfoCard);
 
-  shows.forEach((show) => {
-    // const showContainer = document.createElement("div");
-    // showContainer.classList.add("show__container");
-    // showContainer.appendChild(showInfoCard);
+  const showInfoCard = document.createElement("div");
+  showInfoCard.classList.add("show__info");
+  showListContainer.appendChild(showInfoCard);
 
-    const showInfoCard = document.createElement("div");
-    showInfoCard.classList.add("show__info");
-    showListContainer.appendChild(showInfoCard);
+  const showDate = createListValue("show__date", "Date", show.date);
+  showInfoCard.appendChild(showDate);
 
-    const showDate = createListValue("show__date", "Date", show.date);
-    showInfoCard.appendChild(showDate);
+  const showVenue = createListValue("show__venue", "Venue", show.venue);
+  showInfoCard.appendChild(showVenue);
 
-    const showVenue = createListValue("show__venue", "Venue", show.venue);
-    showInfoCard.appendChild(showVenue);
+  const showLocation = createListValue(
+    "show__location",
+    "Location",
+    show.location
+  );
+  showInfoCard.appendChild(showLocation);
 
-    const showLocation = createListValue(
-      "show__location",
-      "Location",
-      show.location
-    );
-    showInfoCard.appendChild(showLocation);
+  const submit = document.createElement("button");
+  submit.innerHTML = "Buy Tickets";
+  submit.classList = "shows__button";
 
-    const submit = document.createElement("button");
-    submit.innerHTML = "Buy Tickets";
-    submit.classList = "shows__button";
+  showInfoCard.appendChild(submit);
+};
 
-    showInfoCard.appendChild(submit);
-  });
+const render = () => {
+  refreshApiKey().then(() => getShows());
 };
 
 render();

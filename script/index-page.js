@@ -45,17 +45,17 @@ const getComments = () => {
     .then((result) => {
       const commentsContainer = document.querySelector(".reviews__list");
       commentsContainer.innerHTML = "";
-      result.data
-        .map((comment) => {
-          return {
-            id: uniqueID(),
-            picture: getPhotoUrl(),
-            name: `${comment.name}`,
-            time: `${formatDate(comment.timestamp)}`,
-            text: `${comment.comment}`,
-          };
-        })
-        .forEach(displayComment);
+      const commentsToDisplay = result.data.map((comment) => {
+        return {
+          id: uniqueID(),
+          picture: getPhotoUrl(),
+          name: `${comment.name}`,
+          time: `${formatDate(comment.timestamp)}`,
+          text: `${comment.comment}`,
+        };
+      });
+
+      commentsToDisplay.forEach(displayComment);
     });
 };
 
