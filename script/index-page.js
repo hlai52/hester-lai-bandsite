@@ -1,14 +1,7 @@
-//goes into index page html
-
-//
-//api key
-// {"api_key":"f2b00800-3d32-4544-877c-4a94a8b11418"}
-//inside then
-//comments array api
 const apiURL =
   "https://project-1-api.herokuapp.com/comments?api_key=f2b00800-3d32-4544-877c-4a94a8b11418";
 
-//create funciton to get comments, make a post then clear the exisiting comments, then call that getting comment function, when posting comment, clears everything out and gets 4 comments and updates
+//create funciton to get comments, make a post then clear the exisiting comments, then call that getting comment function, when posting comment, clears everything out and gets 4 comments and updatesß
 
 const serverUrl = "https://project-1-api.herokuapp.com";
 let api_key = "";
@@ -36,6 +29,14 @@ const getComments = () => {
         })
         .forEach(displayComment);
     });
+};
+
+const postComment = (name, comment) => {
+  const payload = {
+    name: name,
+    comment: comment,
+  };
+  return axios.post(`${serverUrl}/comments?api_key=${api_key}`);
 };
 
 axios
@@ -70,29 +71,38 @@ formEl.addEventListener("submit", (event) => {
   event.preventDefault();
 
   // Add new comment to the array
-  comments.unshift({
-    id: uniqueID(),
-    picture: getPhotoUrl(),
-    name: event.target.name.value,
-    time: formatDate(new Date()),
-    text: event.target.comment.value,
-  });
+  displayComment(
+    {
+      id: uniqueID(),
+      picture: getPhotoUrl(),
+      name: event.target.name.value,
+      time: formatDate(new Date()),
+      text: event.target.comment.value,
+    },
+    true
+  );
 
   // reset form
   event.target.name.value = "";
   event.target.comment.value = "";
 
-  // render all comments again
-  render();
+  // Send it to the API then refresh comments
+  postComment()
+    .then(() => getComments())
+    .catch((error) => alert(error));
 });
 
 // Render an individual comment and add it to reviews__list
-const displayComment = (comment) => {
+const displayComment = (comment, showOnTop = false) => {
   const commentsContainer = document.querySelector(".reviews__list");
 
   const commentsCard = document.createElement("div");
   commentsCard.classList.add("reviews__card");
-  commentsContainer.appendChild(commentsCard);
+  if (showOnTop) {
+    commentsContainer.prepend(commentsCard);
+  } else {
+    commentsContainer.appendChild(commentsCard);
+  }
 
   const image = document.createElement("img");
   image.classList.add("reviews__avatar");
@@ -125,7 +135,7 @@ const displayComment = (comment) => {
 };
 
 const render = () => {
-  refreshApiKey().then(getComments);
+  refreshApiKey().then(() => getComments());
 };
 
 render();
