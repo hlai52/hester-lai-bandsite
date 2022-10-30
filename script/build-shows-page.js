@@ -1,8 +1,8 @@
 const serverUrl = "https://project-1-api.herokuapp.com";
-let api_key = "";
 
 const uniqueID = () => Math.random().toString(36).substring(2, 9);
 
+let api_key = "";
 const refreshApiKey = () => {
   return axios
     .get(`${serverUrl}/register`)
@@ -13,6 +13,12 @@ const refreshApiKey = () => {
       alert(error);
     });
 };
+
+// const api_key = "22cab15b-5e2f-4cf5-b006-5864b37e5d25";
+// async function myFn() {
+//   const result = await axios(`${serverUrl}/comments?api_key=${api_key}`);
+//   console.log(result.data);
+// }
 
 const getShows = () => {
   return axios
