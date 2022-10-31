@@ -14,12 +14,6 @@ const refreshApiKey = () => {
     });
 };
 
-// const api_key = "22cab15b-5e2f-4cf5-b006-5864b37e5d25";
-// async function myFn() {
-//   const result = await axios(`${serverUrl}/comments?api_key=${api_key}`);
-//   console.log(result.data);
-// }
-
 const getShows = () => {
   return axios
     .get(`${serverUrl}/showdates?api_key=${api_key}`)
